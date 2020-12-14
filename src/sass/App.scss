@@ -3,72 +3,84 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
-
+  box-sizing: border-box;
+}
 html {
-  font-size: 62.5%; }
-
+  font-size: 62.5%;
+}
 body {
-  font-family: "Roboto" "sans-serif"; }
+  font-family: "Roboto" "sans-serif";
+}
 
 #navigation {
   display: flex;
   align-items: center;
   justify-content: space-around;
   box-shadow: 0.1rem 0.1rem 0.8rem darkgray;
-  position: relative; }
-  #navigation .navigation-links {
+  position: relative;
+  & .navigation-links {
     list-style: none;
     display: flex;
-    align-items: center; }
+    align-items: center;
     @media (max-width: 750px) {
-      #navigation .navigation-links {
-        display: none; } }
-    #navigation .navigation-links li {
+      display: none;
+    }
+    & li {
       font-size: 1.5rem;
       transition: 0.4s all;
       padding: 1rem 1.5rem;
-      cursor: pointer; }
-      #navigation .navigation-links li:hover {
-        background-color: #ab7b60; }
-      #navigation .navigation-links li:hover .navigation-link {
-        color: white; }
-      #navigation .navigation-links li .navigation-link {
+      cursor: pointer;
+      &:hover {
+        background-color: rgb(171, 123, 96);
+      }
+      &:hover .navigation-link {
+        color: white;
+      }
+      & .navigation-link {
         text-decoration: 0;
         color: black;
         padding: 1rem 1.5rem;
-        transition: 0.2s all; }
-  #navigation .cartButtons {
+        transition: 0.2s all;
+      }
+    }
+  }
+  & .cartButtons {
     position: relative;
     display: flex;
-    align-items: center; }
+    align-items: center;
     @media (max-width: 750px) {
-      #navigation .cartButtons {
-        display: none; } }
-    #navigation .cartButtons .reactIcon {
+      display: none;
+    }
+    & .reactIcon {
       font-size: 3rem;
       margin: 0 0.5rem;
-      cursor: pointer; }
-    #navigation .cartButtons .cartLink {
-      color: black; }
-    #navigation .cartButtons .cartItems {
+      cursor: pointer;
+    }
+    & .cartLink {
+      color: black;
+    }
+    & .cartItems {
       position: absolute;
-      background-color: #ab7b60;
+      background-color: rgb(171, 123, 96);
       color: white;
       font-weight: bold;
       padding: 0.3rem 0.6rem;
       border-radius: 50%;
       font-size: 0.8rem;
       top: -0.8rem;
-      left: 1.7rem; }
-  #navigation .sidebar {
+      left: 1.7rem;
+    }
+  }
+  & .sidebar {
     font-size: 3rem;
-    color: #ab7b60;
+    color: rgb(171, 123, 96);
     cursor: pointer;
-    display: none; }
+    display: none;
     @media (max-width: 750px) {
-      #navigation .sidebar {
-        display: flex; } }
+      display: flex;
+    }
+  }
+}
 
 .sidebarPanel {
   position: absolute;
@@ -82,59 +94,71 @@ body {
   transform: scale(0.5);
   transition: 0.2s all;
   display: flex;
-  flex-direction: column; }
-  .sidebarPanel .sidebarHeader {
+  flex-direction: column;
+  & .sidebarHeader {
     display: flex;
     align-items: center;
-    justify-content: space-around; }
-    .sidebarPanel .sidebarHeader .reactIcon {
+    justify-content: space-around;
+    & .reactIcon {
       color: red;
       font-size: 2.5rem;
-      cursor: pointer; }
-  .sidebarPanel .sidebar-links {
+      cursor: pointer;
+    }
+  }
+  & .sidebar-links {
     list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: center; }
-    .sidebarPanel .sidebar-links li {
+    align-items: center;
+    & li {
       font-size: 1.5rem;
       transition: 0.4s all;
-      padding: 1rem 1.5rem; }
-      .sidebarPanel .sidebar-links li:hover {
-        background-color: #ab7b60; }
-      .sidebarPanel .sidebar-links li:hover .sidebar-link {
-        color: white; }
-      .sidebarPanel .sidebar-links li .sidebar-link {
+      padding: 1rem 1.5rem;
+      &:hover {
+        background-color: rgb(171, 123, 96);
+      }
+      &:hover .sidebar-link {
+        color: white;
+      }
+      & .sidebar-link {
         text-decoration: 0;
         color: black;
         padding: 1rem 1.5rem;
-        transition: 0.2s all; }
-  .sidebarPanel .cartButtons {
+        transition: 0.2s all;
+      }
+    }
+  }
+  & .cartButtons {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center; }
-    .sidebarPanel .cartButtons .reactIcon {
+    justify-content: center;
+    & .reactIcon {
       font-size: 3rem;
       margin: 3rem 0.5rem;
-      cursor: pointer; }
-    .sidebarPanel .cartButtons .cartLink {
-      color: black; }
-    .sidebarPanel .cartButtons .cartItems {
+      cursor: pointer;
+    }
+    & .cartLink {
+      color: black;
+    }
+    & .cartItems {
       position: absolute;
-      background-color: #ab7b60;
+      background-color: rgb(171, 123, 96);
       color: white;
       font-weight: bold;
       padding: 0.3rem 0.6rem;
       border-radius: 50%;
       font-size: 0.8rem;
       top: -0.8rem;
-      left: 1.7rem; }
-
+      left: 1.7rem;
+    }
+  }
+}
 .sidebarPanel.show {
   visibility: visible;
   opacity: 1;
-  transform: scale(1); }
+  transform: scale(1);
+}
 
 .footerContent {
   background-color: black;
@@ -144,4 +168,5 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.4rem; }
+  font-size: 1.4rem;
+}
