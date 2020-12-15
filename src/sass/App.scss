@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import "./mixins", "./variables";
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +32,7 @@ body {
       padding: 1rem 1.5rem;
       cursor: pointer;
       &:hover {
-        background-color: rgb(171, 123, 96);
+        background-color: $primaryColor;
       }
       &:hover .navigation-link {
         color: white;
@@ -48,6 +49,14 @@ body {
     position: relative;
     display: flex;
     align-items: center;
+    & .cartText {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    & .loginText {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
     @media (max-width: 750px) {
       display: none;
     }
@@ -61,19 +70,19 @@ body {
     }
     & .cartItems {
       position: absolute;
-      background-color: rgb(171, 123, 96);
+      background-color: $primaryColor;
       color: white;
       font-weight: bold;
       padding: 0.3rem 0.6rem;
       border-radius: 50%;
       font-size: 0.8rem;
       top: -0.8rem;
-      left: 1.7rem;
+      left: 5rem;
     }
   }
   & .sidebar {
     font-size: 3rem;
-    color: rgb(171, 123, 96);
+    color: $primaryColor;
     cursor: pointer;
     display: none;
     @media (max-width: 750px) {
@@ -115,7 +124,7 @@ body {
       transition: 0.4s all;
       padding: 1rem 1.5rem;
       &:hover {
-        background-color: rgb(171, 123, 96);
+        background-color: $primaryColor;
       }
       &:hover .sidebar-link {
         color: white;
@@ -143,7 +152,7 @@ body {
     }
     & .cartItems {
       position: absolute;
-      background-color: rgb(171, 123, 96);
+      background-color: $primaryColor;
       color: white;
       font-weight: bold;
       padding: 0.3rem 0.6rem;
@@ -169,4 +178,358 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.4rem;
+}
+
+#pagehero {
+  background-color: $secondaryColor;
+  padding: 6rem;
+  & .pageheroLink {
+    font-size: 2.8rem;
+    margin-left: 4.5rem;
+    & a {
+      text-decoration: 0;
+      color: $tertiaryColor;
+    }
+  }
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3rem;
+  padding: 10rem 0;
+  margin: 0 20rem;
+  & .aboutImage {
+    width: 100%;
+    & img {
+      width: 100%;
+      display: block;
+    }
+  }
+  & .aboutContent {
+    & .aboutContentHeading {
+      font-size: 4rem;
+      font-family: "Merriweather";
+    }
+    & .underline {
+      @include underline(15rem);
+    }
+  }
+  & .aboutContentText {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+  }
+}
+
+#errorPage {
+  background-color: $secondaryColor;
+  padding: 20rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & .errorHeadingBox {
+    text-align: center;
+    & .errorHeading {
+      font-size: 8rem;
+      margin-bottom: 2rem;
+      font-family: "Merriweather";
+    }
+    & .errorSubheading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 3rem;
+      & .reactIcon {
+        font-size: 2.5rem;
+        margin-left: 2rem;
+      }
+    }
+  }
+  & .btn {
+    @include btn(1.5rem 3rem);
+    margin-top: 4rem;
+    & a {
+      color: white;
+      font-weight: bold;
+      text-decoration: 0;
+      padding: 1.5rem 4rem;
+    }
+  }
+}
+
+#showcase {
+  padding: 10rem 0;
+  margin: 0 15rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  & .showcaseBoxOne {
+    & .showcaseHeading {
+      font-size: 4rem;
+      margin-bottom: 2rem;
+      font-family: "Merriweather";
+    }
+    & .showcaseText {
+      font-size: 1.8rem;
+      line-height: 3rem;
+      width: 80%;
+      color: rgb(136, 136, 136);
+    }
+    & .btn {
+      @include btn(2rem 0);
+      margin-top: 4rem;
+      border-radius: 0.5rem;
+      font-size: 1.5rem;
+      & a {
+        text-decoration: 0;
+        color: white;
+        font-weight: bold;
+        padding: 2rem 5rem;
+      }
+    }
+  }
+  & .showcaseBoxTwo {
+    position: relative;
+    & img:nth-child(1) {
+      width: 25rem;
+      position: absolute;
+      bottom: 0;
+      left: -10rem;
+    }
+    & img:nth-child(2) {
+      width: 40rem;
+      height: 100%;
+      box-shadow: 0.1rem 0.1rem 0.8rem darkgray;
+    }
+    & .background {
+      position: absolute;
+      background-color: $secondaryColor;
+      width: 40rem;
+      height: 100%;
+      height: 75%;
+      bottom: 0;
+      left: -10rem;
+      z-index: -1;
+      box-shadow: 0.1rem 0.1rem 0.8rem darkgray;
+    }
+  }
+}
+
+#services {
+  background-color: $secondaryColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20rem;
+  position: relative;
+  & .servicesBoxOne {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    align-items: center;
+    margin-top: 6rem;
+    & .boxOneHeading {
+      font-size: 3rem;
+      font-family: "Merriweather";
+    }
+    & .boxOneText {
+      font-size: 1.8rem;
+      line-height: 3rem;
+    }
+  }
+  & .servicesBoxTwo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    transform: translateY(8rem);
+    & .boxTwoCard {
+      background-color: $tertiaryColor;
+      text-align: center;
+      padding: 2rem 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0.1rem 0.1rem 0.5rem rgb(65, 65, 65);
+      transition: 0.3s all;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0.1rem 0.1rem 1rem rgb(65, 65, 65);
+      }
+      & .cardIcon {
+        background-color: $secondaryColor;
+        border-radius: 50%;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        & .reactIcon {
+          font-size: 4rem;
+        }
+      }
+      & .cardHeading {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        font-family: "Merriweather";
+      }
+      & .cardText {
+        font-size: 1.6rem;
+        line-height: 2rem;
+        margin-bottom: 5rem;
+      }
+    }
+  }
+}
+
+#contact {
+  padding: 30rem 0 25rem 0;
+  margin: 0 15rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 4rem;
+  & .contactBoxOne {
+    & .boxOneHeading {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      font-family: "Merriweather";
+    }
+    & .boxOneText {
+      font-size: 1.8rem;
+      line-height: 3rem;
+      color: rgb(136, 136, 136);
+    }
+  }
+  & .contactBoxTwo {
+    align-self: center;
+    & form {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      & input {
+        outline: 0;
+        border: 0;
+        box-shadow: 0.1rem 0.1rem 0.3rem black;
+        padding: 1.5rem 1.5rem;
+        width: 35rem;
+      }
+      & .btn {
+        @include btn(1.6rem 4rem);
+        color: white;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+#featuredProducts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 10rem;
+  background-color: #f1f5f8;
+  & .featuredProductsHeading {
+    margin: 2rem 0 0 0;
+    font-size: 3rem;
+    font-family: "Merriweather";
+  }
+  & .underline {
+    @include underline(12rem);
+    margin-bottom: 6rem;
+  }
+  & .featuredProductsBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    margin: 3rem 0;
+    & .featuredProduct {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      & .featuredProductImage {
+        width: 42rem;
+        height: 28rem;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(black, 0.5);
+          transition: 0.3s all;
+          visibility: hidden;
+          opacity: 0;
+        }
+        &:hover::before {
+          visibility: visible;
+          opacity: 1;
+        }
+        & img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+        }
+        & .reactIcon {
+          visibility: hidden;
+          opacity: 0;
+          transition: 0.3s all;
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 3.5rem;
+          color: $primaryColor;
+          cursor: pointer;
+        }
+        &:hover .reactIcon {
+          visibility: visible;
+          opacity: 1;
+          top: 50%;
+        }
+      }
+      & .featuredPorductInfo {
+        display: flex;
+        justify-content: space-between;
+        padding: 2.5rem 1rem;
+        align-items: center;
+        width: 100%;
+        & .productName {
+          font-size: 1.5rem;
+          font-family: "Merriweather";
+          font-weight: 400;
+        }
+        & .productPrice {
+          font-size: 1.5rem;
+          font-weight: 400;
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+  & .btn {
+    @include btn(1.5rem 0rem);
+    margin: 4rem 0;
+    & a {
+      padding: 1.5rem 6rem;
+      text-decoration: 0;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+
+#loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
 }

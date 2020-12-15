@@ -1,8 +1,13 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext, useEffect, useReducer } from "react";
 import { reducer } from "../reducers/products_reducer";
+import { products_url } from "../utils/helpers";
 
 const initialState = {
   isSidebarOpen: false,
+  isLoading: false,
+  products: [],
+  featured_products: [],
+  isErro: false,
 };
 
 const ProductsContext = React.createContext();
@@ -17,6 +22,21 @@ export const ProductsProvider = ({ children }) => {
   const closeSidebar = () => {
     dispatch({ type: "CLOSE_SIDEBAR" });
   };
+
+  const fetchData = async (url) => {
+    dispatch({ type: "GET_PRODUCTS_BEGIN" });
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      dispatch({ type: "GET_PRODUCTS_SUCCESS", payload: data });
+    } catch (e) {
+      dispatch({ type: "GET_PRODUCTS_ERROR" });
+    }
+  };
+
+  useEffect(() => {
+    fetchData(products_url);
+  }, []);
 
   return (
     <ProductsContext.Provider

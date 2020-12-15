@@ -1,0 +1,20 @@
+@import "./variables";
+@mixin underline($width) {
+  background-color: $primaryColor;
+  width: $width;
+  height: 0.3rem;
+  margin: 1rem 0;
+}
+
+@mixin btn($padding) {
+  background-color: $primaryColor;
+  padding: $padding;
+  border: 0;
+  outline: 0;
+  box-shadow: 0.1rem 0.1rem 1rem darkgray;
+  cursor: pointer;
+  transition: 0.3s opacity;
+  &:hover {
+    opacity: 0.8;
+  }
+}

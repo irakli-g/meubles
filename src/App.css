@@ -42,6 +42,12 @@ body {
     position: relative;
     display: flex;
     align-items: center; }
+    #navigation .cartButtons .cartText {
+      font-size: 1.5rem;
+      font-weight: bold; }
+    #navigation .cartButtons .loginText {
+      font-size: 1.5rem;
+      font-weight: bold; }
     @media (max-width: 750px) {
       #navigation .cartButtons {
         display: none; } }
@@ -60,7 +66,7 @@ body {
       border-radius: 50%;
       font-size: 0.8rem;
       top: -0.8rem;
-      left: 1.7rem; }
+      left: 5rem; }
   #navigation .sidebar {
     font-size: 3rem;
     color: #ab7b60;
@@ -145,3 +151,329 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.4rem; }
+
+#pagehero {
+  background-color: #e4d1c6;
+  padding: 6rem; }
+  #pagehero .pageheroLink {
+    font-size: 2.8rem;
+    margin-left: 4.5rem; }
+    #pagehero .pageheroLink a {
+      text-decoration: 0;
+      color: #be9d8a; }
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3rem;
+  padding: 10rem 0;
+  margin: 0 20rem; }
+  .aboutGrid .aboutImage {
+    width: 100%; }
+    .aboutGrid .aboutImage img {
+      width: 100%;
+      display: block; }
+  .aboutGrid .aboutContent .aboutContentHeading {
+    font-size: 4rem;
+    font-family: "Merriweather"; }
+  .aboutGrid .aboutContent .underline {
+    background-color: #ab7b60;
+    width: 15rem;
+    height: 0.3rem;
+    margin: 1rem 0; }
+  .aboutGrid .aboutContentText {
+    font-size: 1.4rem;
+    line-height: 2.5rem; }
+
+#errorPage {
+  background-color: #e4d1c6;
+  padding: 20rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  #errorPage .errorHeadingBox {
+    text-align: center; }
+    #errorPage .errorHeadingBox .errorHeading {
+      font-size: 8rem;
+      margin-bottom: 2rem;
+      font-family: "Merriweather"; }
+    #errorPage .errorHeadingBox .errorSubheading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 3rem; }
+      #errorPage .errorHeadingBox .errorSubheading .reactIcon {
+        font-size: 2.5rem;
+        margin-left: 2rem; }
+  #errorPage .btn {
+    background-color: #ab7b60;
+    padding: 1.5rem 3rem;
+    border: 0;
+    outline: 0;
+    box-shadow: 0.1rem 0.1rem 1rem darkgray;
+    cursor: pointer;
+    transition: 0.3s opacity;
+    margin-top: 4rem; }
+    #errorPage .btn:hover {
+      opacity: 0.8; }
+    #errorPage .btn a {
+      color: white;
+      font-weight: bold;
+      text-decoration: 0;
+      padding: 1.5rem 4rem; }
+
+#showcase {
+  padding: 10rem 0;
+  margin: 0 15rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center; }
+  #showcase .showcaseBoxOne .showcaseHeading {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    font-family: "Merriweather"; }
+  #showcase .showcaseBoxOne .showcaseText {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    width: 80%;
+    color: #888888; }
+  #showcase .showcaseBoxOne .btn {
+    background-color: #ab7b60;
+    padding: 2rem 0;
+    border: 0;
+    outline: 0;
+    box-shadow: 0.1rem 0.1rem 1rem darkgray;
+    cursor: pointer;
+    transition: 0.3s opacity;
+    margin-top: 4rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem; }
+    #showcase .showcaseBoxOne .btn:hover {
+      opacity: 0.8; }
+    #showcase .showcaseBoxOne .btn a {
+      text-decoration: 0;
+      color: white;
+      font-weight: bold;
+      padding: 2rem 5rem; }
+  #showcase .showcaseBoxTwo {
+    position: relative; }
+    #showcase .showcaseBoxTwo img:nth-child(1) {
+      width: 25rem;
+      position: absolute;
+      bottom: 0;
+      left: -10rem; }
+    #showcase .showcaseBoxTwo img:nth-child(2) {
+      width: 40rem;
+      height: 100%;
+      box-shadow: 0.1rem 0.1rem 0.8rem darkgray; }
+    #showcase .showcaseBoxTwo .background {
+      position: absolute;
+      background-color: #e4d1c6;
+      width: 40rem;
+      height: 100%;
+      height: 75%;
+      bottom: 0;
+      left: -10rem;
+      z-index: -1;
+      box-shadow: 0.1rem 0.1rem 0.8rem darkgray; }
+
+#services {
+  background-color: #e4d1c6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20rem;
+  position: relative; }
+  #services .servicesBoxOne {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    align-items: center;
+    margin-top: 6rem; }
+    #services .servicesBoxOne .boxOneHeading {
+      font-size: 3rem;
+      font-family: "Merriweather"; }
+    #services .servicesBoxOne .boxOneText {
+      font-size: 1.8rem;
+      line-height: 3rem; }
+  #services .servicesBoxTwo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    transform: translateY(8rem); }
+    #services .servicesBoxTwo .boxTwoCard {
+      background-color: #be9d8a;
+      text-align: center;
+      padding: 2rem 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0.1rem 0.1rem 0.5rem #414141;
+      transition: 0.3s all;
+      cursor: pointer; }
+      #services .servicesBoxTwo .boxTwoCard:hover {
+        box-shadow: 0.1rem 0.1rem 1rem #414141; }
+      #services .servicesBoxTwo .boxTwoCard .cardIcon {
+        background-color: #e4d1c6;
+        border-radius: 50%;
+        padding: 1rem;
+        margin-bottom: 2rem; }
+        #services .servicesBoxTwo .boxTwoCard .cardIcon .reactIcon {
+          font-size: 4rem; }
+      #services .servicesBoxTwo .boxTwoCard .cardHeading {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        font-family: "Merriweather"; }
+      #services .servicesBoxTwo .boxTwoCard .cardText {
+        font-size: 1.6rem;
+        line-height: 2rem;
+        margin-bottom: 5rem; }
+
+#contact {
+  padding: 30rem 0 25rem 0;
+  margin: 0 15rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 4rem; }
+  #contact .contactBoxOne .boxOneHeading {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-family: "Merriweather"; }
+  #contact .contactBoxOne .boxOneText {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    color: #888888; }
+  #contact .contactBoxTwo {
+    align-self: center; }
+    #contact .contactBoxTwo form {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      #contact .contactBoxTwo form input {
+        outline: 0;
+        border: 0;
+        box-shadow: 0.1rem 0.1rem 0.3rem black;
+        padding: 1.5rem 1.5rem;
+        width: 35rem; }
+      #contact .contactBoxTwo form .btn {
+        background-color: #ab7b60;
+        padding: 1.6rem 4rem;
+        border: 0;
+        outline: 0;
+        box-shadow: 0.1rem 0.1rem 1rem darkgray;
+        cursor: pointer;
+        transition: 0.3s opacity;
+        color: white;
+        font-size: 1.5rem; }
+        #contact .contactBoxTwo form .btn:hover {
+          opacity: 0.8; }
+
+#featuredProducts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 10rem;
+  background-color: #f1f5f8; }
+  #featuredProducts .featuredProductsHeading {
+    margin: 2rem 0 0 0;
+    font-size: 3rem;
+    font-family: "Merriweather"; }
+  #featuredProducts .underline {
+    background-color: #ab7b60;
+    width: 12rem;
+    height: 0.3rem;
+    margin: 1rem 0;
+    margin-bottom: 6rem; }
+  #featuredProducts .featuredProductsBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+    margin: 3rem 0; }
+    #featuredProducts .featuredProductsBox .featuredProduct {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; }
+      #featuredProducts .featuredProductsBox .featuredProduct .featuredProductImage {
+        width: 42rem;
+        height: 28rem;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        position: relative; }
+        #featuredProducts .featuredProductsBox .featuredProduct .featuredProductImage::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          transition: 0.3s all;
+          visibility: hidden;
+          opacity: 0; }
+        #featuredProducts .featuredProductsBox .featuredProduct .featuredProductImage:hover::before {
+          visibility: visible;
+          opacity: 1; }
+        #featuredProducts .featuredProductsBox .featuredProduct .featuredProductImage img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover; }
+        #featuredProducts .featuredProductsBox .featuredProduct .featuredProductImage .reactIcon {
+          visibility: hidden;
+          opacity: 0;
+          transition: 0.3s all;
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 3.5rem;
+          color: #ab7b60;
+          cursor: pointer; }
+        #featuredProducts .featuredProductsBox .featuredProduct .featuredProductImage:hover .reactIcon {
+          visibility: visible;
+          opacity: 1;
+          top: 50%; }
+      #featuredProducts .featuredProductsBox .featuredProduct .featuredPorductInfo {
+        display: flex;
+        justify-content: space-between;
+        padding: 2.5rem 1rem;
+        align-items: center;
+        width: 100%; }
+        #featuredProducts .featuredProductsBox .featuredProduct .featuredPorductInfo .productName {
+          font-size: 1.5rem;
+          font-family: "Merriweather";
+          font-weight: 400; }
+        #featuredProducts .featuredProductsBox .featuredProduct .featuredPorductInfo .productPrice {
+          font-size: 1.5rem;
+          font-weight: 400;
+          color: #ab7b60; }
+  #featuredProducts .btn {
+    background-color: #ab7b60;
+    padding: 1.5rem 0rem;
+    border: 0;
+    outline: 0;
+    box-shadow: 0.1rem 0.1rem 1rem darkgray;
+    cursor: pointer;
+    transition: 0.3s opacity;
+    margin: 4rem 0; }
+    #featuredProducts .btn:hover {
+      opacity: 0.8; }
+    #featuredProducts .btn a {
+      padding: 1.5rem 6rem;
+      text-decoration: 0;
+      color: white;
+      font-weight: bold; }
+
+#loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0; }

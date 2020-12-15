@@ -12,7 +12,9 @@ export const Navbar = () => {
     <header>
       <nav id="navigation">
         <figure className="navigation-logo">
-          <img src={logo} alt="comfy sloth logo" />
+          <Link to="/">
+            <img src={logo} alt="comfy sloth logo" />
+          </Link>
         </figure>
         <ul className="navigation-links">
           {links.map((item) => {
