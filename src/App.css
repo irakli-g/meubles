@@ -477,3 +477,138 @@ body {
   justify-content: center;
   align-items: center;
   margin: 2rem 0; }
+
+#singleProduct {
+  margin: 5rem 10rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
+  overflow: hidden; }
+  #singleProduct .singleProductImages {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem; }
+    #singleProduct .singleProductImages > img {
+      width: 100%;
+      height: 55rem;
+      display: block;
+      object-fit: cover; }
+    #singleProduct .singleProductImages .gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      margin-top: 1.5rem;
+      column-gap: 1rem; }
+      #singleProduct .singleProductImages .gallery img {
+        display: block;
+        width: 100%;
+        height: 10rem;
+        object-fit: fill;
+        cursor: pointer;
+        transition: 0.2s all; }
+        #singleProduct .singleProductImages .gallery img:hover {
+          box-shadow: 0.1rem 0.1rem 1.5rem #2e2e2e; }
+      #singleProduct .singleProductImages .gallery img.active {
+        box-shadow: 0.1rem 0.1rem 1.5rem #2e2e2e; }
+  #singleProduct .singleProductContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    padding: 0 6rem 0 0; }
+    #singleProduct .singleProductContent .heading {
+      font-size: 3rem;
+      font-family: "Merriweather"; }
+    #singleProduct .singleProductContent .description {
+      font-size: 1.6rem;
+      line-height: 3rem;
+      color: #888888; }
+    #singleProduct .singleProductContent .singleProductInfo {
+      display: flex;
+      flex-direction: column; }
+      #singleProduct .singleProductContent .singleProductInfo .info:nth-child(1) {
+        margin-bottom: 1rem; }
+      #singleProduct .singleProductContent .singleProductInfo .info:nth-child(2) {
+        margin-top: 1rem;
+        margin-bottom: 1rem; }
+      #singleProduct .singleProductContent .singleProductInfo .info:nth-child(3) {
+        margin-top: 1rem; }
+      #singleProduct .singleProductContent .singleProductInfo .info {
+        font-size: 1.8rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 5rem;
+        color: #888888; }
+        #singleProduct .singleProductContent .singleProductInfo .info span {
+          margin-right: 1rem;
+          font-weight: bold;
+          color: black; }
+
+#singleProductDetails .singleProductReviews {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center; }
+  #singleProductDetails .singleProductReviews .star {
+    color: orange;
+    font-size: 2rem; }
+  #singleProductDetails .singleProductReviews .reviews {
+    margin-left: 1rem;
+    margin-bottom: 0.5rem; }
+#singleProductDetails .price {
+  color: #ab7b60;
+  font-size: 2.5rem; }
+
+#singleProductAddToCart .colors {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center; }
+  #singleProductAddToCart .colors button:nth-child(1) {
+    margin-left: 1.5rem; }
+  #singleProductAddToCart .colors .btn {
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    outline: 0;
+    border: 0;
+    margin: 0 0.5rem;
+    transition: 0.3s all;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    #singleProductAddToCart .colors .btn:hover {
+      box-shadow: 0.1rem 0.1rem 0.5rem #333333; }
+    #singleProductAddToCart .colors .btn .reactIcon {
+      color: white;
+      font-size: 1.5rem; }
+#singleProductAddToCart .btn-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-top: 5rem; }
+  #singleProductAddToCart .btn-container .btn {
+    border: 0;
+    border-radius: 0.3rem;
+    background-color: #ab7b60;
+    outline: 0;
+    cursor: pointer;
+    padding: 1rem; }
+    #singleProductAddToCart .btn-container .btn .reactIcon {
+      color: white;
+      font-weight: bold; }
+#singleProductAddToCart .btn.addToCart {
+  background-color: #ab7b60;
+  padding: 1.5rem 6rem;
+  border: 0;
+  outline: 0;
+  box-shadow: 0.1rem 0.1rem 1rem darkgray;
+  cursor: pointer;
+  transition: 0.3s opacity;
+  color: white;
+  margin-top: 2rem;
+  font-weight: bold; }
+  #singleProductAddToCart .btn.addToCart:hover {
+    opacity: 0.8; }

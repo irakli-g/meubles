@@ -8,6 +8,9 @@ const initialState = {
   products: [],
   featured_products: [],
   isErro: false,
+  singleProduct: {},
+  isSingleProduct_loading: false,
+  isSingleProduct_error: false,
 };
 
 const ProductsContext = React.createContext();
@@ -34,6 +37,17 @@ export const ProductsProvider = ({ children }) => {
     }
   };
 
+  const fetchSingleProduct = async (url) => {
+    dispatch({ type: "GET_SINGLE_PRODUCT_BEGIN" });
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      dispatch({ type: "GET_SINGLE_PRODUCT_SUCCESS", payload: data });
+    } catch (e) {
+      dispatch({ type: "GET_SINGLE_PRODUCT_ERROR" });
+    }
+  };
+
   useEffect(() => {
     fetchData(products_url);
   }, []);
@@ -44,6 +58,7 @@ export const ProductsProvider = ({ children }) => {
         ...state,
         openSidebar,
         closeSidebar,
+        fetchSingleProduct,
       }}
     >
       {children}

@@ -34,5 +34,26 @@ export const reducer = (state, action) => {
       featured_products,
     };
   }
+  if (action.type === "GET_SINGLE_PRODUCT_BEGIN") {
+    return {
+      ...state,
+      isSingleProduct_loading: true,
+      isSingleProduct_error: false,
+    };
+  }
+  if (action.type === "GET_SINGLE_PRODUCT_SUCCESS") {
+    return {
+      ...state,
+      isSingleProduct_loading: false,
+      isSingleProduct_error: false,
+      singleProduct: action.payload,
+    };
+  }
+  if (action.type === "GET_SINGLE_PRODUCT_ERROR") {
+    return {
+      isSingleProduct_error: true,
+      isSingleProduct_loading: false,
+    };
+  }
   throw new Error(`Such action ${action.type} was not handled in reducer`);
 };
