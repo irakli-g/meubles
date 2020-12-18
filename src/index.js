@@ -5,11 +5,14 @@ import App from "./App.jsx";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { ProductsProvider } from "./context/products_context";
+import { FilterContextProvider } from "./context/filters_context";
 
 ReactDOM.render(
   <BrowserRouter>
     <ProductsProvider>
-      <App />
+      <FilterContextProvider>
+        <App />
+      </FilterContextProvider>
     </ProductsProvider>
   </BrowserRouter>,
   document.getElementById("root")

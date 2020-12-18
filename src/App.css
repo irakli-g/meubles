@@ -157,7 +157,8 @@ body {
   padding: 6rem; }
   #pagehero .pageheroLink {
     font-size: 2.8rem;
-    margin-left: 4.5rem; }
+    margin-left: 4.5rem;
+    text-transform: capitalize; }
     #pagehero .pageheroLink a {
       text-decoration: 0;
       color: #be9d8a; }
@@ -450,7 +451,8 @@ body {
         #featuredProducts .featuredProductsBox .featuredProduct .featuredPorductInfo .productName {
           font-size: 1.5rem;
           font-family: "Merriweather";
-          font-weight: 400; }
+          font-weight: 400;
+          text-transform: capitalize; }
         #featuredProducts .featuredProductsBox .featuredProduct .featuredPorductInfo .productPrice {
           font-size: 1.5rem;
           font-weight: 400;
@@ -518,7 +520,8 @@ body {
     padding: 0 6rem 0 0; }
     #singleProduct .singleProductContent .heading {
       font-size: 3rem;
-      font-family: "Merriweather"; }
+      font-family: "Merriweather";
+      text-transform: capitalize; }
     #singleProduct .singleProductContent .description {
       font-size: 1.6rem;
       line-height: 3rem;
@@ -612,3 +615,127 @@ body {
   font-weight: bold; }
   #singleProductAddToCart .btn.addToCart:hover {
     opacity: 0.8; }
+
+#productsList {
+  display: flex;
+  justify-content: center;
+  margin: 5rem 15rem; }
+  #productsList .productsListContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%; }
+    #productsList .productsListContent .gridView {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 2rem;
+      row-gap: 5rem; }
+      #productsList .productsListContent .gridView .productBox {
+        display: flex;
+        flex-direction: column; }
+        #productsList .productsListContent .gridView .productBox img {
+          width: 100%;
+          height: 25rem;
+          display: block;
+          object-fit: cover; }
+        #productsList .productsListContent .gridView .productBox .productBoxInfo {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 0.5rem;
+          margin-top: 1rem;
+          align-items: center;
+          overflow: hidden; }
+          #productsList .productsListContent .gridView .productBox .productBoxInfo .price {
+            color: #ab7b60;
+            font-size: 1.6rem;
+            font-weight: bold; }
+          #productsList .productsListContent .gridView .productBox .productBoxInfo .name {
+            text-transform: capitalize;
+            font-size: 1.6rem;
+            font-family: "Merriweather"; }
+        #productsList .productsListContent .gridView .productBox .btn-grid {
+          background-color: #ab7b60;
+          padding: 1rem 0rem;
+          border: 0;
+          outline: 0;
+          box-shadow: 0.1rem 0.1rem 1rem darkgray;
+          cursor: pointer;
+          transition: 0.3s opacity;
+          margin-top: 2rem; }
+          #productsList .productsListContent .gridView .productBox .btn-grid:hover {
+            opacity: 0.8; }
+          #productsList .productsListContent .gridView .productBox .btn-grid a {
+            color: white;
+            font-weight: bold;
+            text-decoration: 0;
+            padding: 1rem 9rem; }
+    #productsList .productsListContent .sort {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 0.1rem solid black;
+      padding-bottom: 1rem; }
+      #productsList .productsListContent .sort select {
+        padding: 0.5rem; }
+      #productsList .productsListContent .sort .views .reactIcon:nth-child(1) {
+        margin-right: 0.5rem; }
+      #productsList .productsListContent .sort .views .reactIcon {
+        font-size: 2.8rem;
+        cursor: pointer;
+        border: 0.1rem solid black;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        overflow: hidden; }
+      #productsList .productsListContent .sort .views .reactIcon.active {
+        background-color: black;
+        color: white;
+        border: 0.1rem solid white; }
+    #productsList .productsListContent .listView {
+      display: flex;
+      flex-direction: column; }
+      #productsList .productsListContent .listView .productBox {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        margin-bottom: 3rem;
+        box-shadow: 0.1rem 0.1rem 0.8rem darkgray; }
+        #productsList .productsListContent .listView .productBox img {
+          width: 100%;
+          height: 30rem;
+          display: block;
+          object-fit: cover; }
+        #productsList .productsListContent .listView .productBox .productBoxInfo {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 1rem 2rem; }
+          #productsList .productsListContent .listView .productBox .productBoxInfo .infoheading .name {
+            text-transform: capitalize;
+            font-family: "Merriweather";
+            font-size: 2rem;
+            margin-bottom: 1rem; }
+          #productsList .productsListContent .listView .productBox .productBoxInfo .infoheading .price {
+            font-size: 1.8rem;
+            color: #ab7b60;
+            font-weight: bold; }
+          #productsList .productsListContent .listView .productBox .productBoxInfo .description {
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            color: #888888; }
+          #productsList .productsListContent .listView .productBox .productBoxInfo .buttonView {
+            background-color: #ab7b60;
+            padding: 1rem 0rem;
+            border: 0;
+            outline: 0;
+            box-shadow: 0.1rem 0.1rem 1rem darkgray;
+            cursor: pointer;
+            transition: 0.3s opacity;
+            width: 25%;
+            align-self: flex-start; }
+            #productsList .productsListContent .listView .productBox .productBoxInfo .buttonView:hover {
+              opacity: 0.8; }
+            #productsList .productsListContent .listView .productBox .productBoxInfo .buttonView a {
+              text-decoration: 0;
+              font-weight: bold;
+              color: white;
+              font-size: 1.4rem;
+              padding: 1rem 6.5rem; }
