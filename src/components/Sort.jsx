@@ -3,7 +3,7 @@ import { BsGrid } from "react-icons/bs";
 import { VscListFlat } from "react-icons/vsc";
 
 export const Sort = (props) => {
-  const { gridView, setGrid, setList, sortProducts, sort } = props;
+  const { gridView, setGrid, setList, sortProducts, sort, products } = props;
   return (
     <div className="sort">
       <div className="views">
@@ -19,6 +19,7 @@ export const Sort = (props) => {
             setList();
           }}
         />
+        <span className="productsNum">{products.length} products found</span>
       </div>
       <select
         name="sort"

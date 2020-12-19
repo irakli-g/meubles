@@ -620,13 +620,113 @@ body {
   display: flex;
   justify-content: center;
   margin: 5rem 15rem; }
+  #productsList .filters {
+    margin-right: 4rem; }
+    #productsList .filters form {
+      display: flex;
+      flex-direction: column; }
+      #productsList .filters form h4 {
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 1.5rem; }
+      #productsList .filters form .form-control {
+        margin-bottom: 1.5rem; }
+      #productsList .filters form .form-control:nth-child(1) {
+        margin-bottom: 2rem; }
+        #productsList .filters form .form-control:nth-child(1) input {
+          padding: 1rem 1.5rem;
+          background-color: #cfe7f1;
+          outline: 0;
+          border: 0;
+          box-shadow: 0.1rem 0.1rem 0.8rem darkgray;
+          text-transform: capitalize; }
+      #productsList .filters form .form-control:nth-child(2) {
+        display: flex;
+        flex-direction: column; }
+        #productsList .filters form .form-control:nth-child(2) .btn {
+          border: 0;
+          background: 0;
+          outline: 0;
+          font-size: 1.4rem;
+          text-transform: capitalize;
+          margin-bottom: 0.5rem;
+          padding: 0.8rem 0;
+          cursor: pointer;
+          transition: 0.3s all;
+          border-radius: 0.3rem; }
+        #productsList .filters form .form-control:nth-child(2) .btn.active {
+          background: #cfe7f1;
+          font-weight: bold; }
+      #productsList .filters form .form-control:nth-child(3) {
+        width: 100%; }
+        #productsList .filters form .form-control:nth-child(3) select {
+          margin-top: 2rem;
+          padding: 0.8rem 0;
+          text-transform: capitalize;
+          width: 100%; }
+      #productsList .filters form .form-control:nth-child(4) .btn-container {
+        display: flex;
+        align-items: center; }
+        #productsList .filters form .form-control:nth-child(4) .btn-container .btn.all {
+          background: 0;
+          font-size: 1.5rem;
+          text-transform: capitalize;
+          border-radius: 0;
+          transition: 0.3s all;
+          border-bottom: 0.3rem solid transparent; }
+        #productsList .filters form .form-control:nth-child(4) .btn-container .btn.all.active {
+          border-bottom: #cfe7f1 solid 0.3rem; }
+        #productsList .filters form .form-control:nth-child(4) .btn-container .btn {
+          margin: 0 0.5rem;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          outline: 0;
+          border: 0;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          #productsList .filters form .form-control:nth-child(4) .btn-container .btn .reactIcon {
+            color: white;
+            font-weight: bolder; }
+      #productsList .filters form .form-control:nth-child(5) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        #productsList .filters form .form-control:nth-child(5) label {
+          margin-bottom: 1rem;
+          font-size: 1.5rem; }
+      #productsList .filters form .form-control:nth-child(6) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        #productsList .filters form .form-control:nth-child(6) label {
+          font-size: 1.5rem; }
+        #productsList .filters form .form-control:nth-child(6) input {
+          height: 1.5rem;
+          width: 1.5rem;
+          cursor: pointer; }
+      #productsList .filters form .btn.clear {
+        background-color: #ab7b60;
+        padding: 1rem;
+        border: 0;
+        outline: 0;
+        box-shadow: 0.1rem 0.1rem 1rem darkgray;
+        cursor: pointer;
+        transition: 0.3s opacity;
+        color: white;
+        font-weight: bold; }
+        #productsList .filters form .btn.clear:hover {
+          opacity: 0.8; }
   #productsList .productsListContent {
     display: flex;
     flex-direction: column;
     width: 100%; }
     #productsList .productsListContent .gridView {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       column-gap: 2rem;
       row-gap: 5rem; }
       #productsList .productsListContent .gridView .productBox {
@@ -677,19 +777,25 @@ body {
       padding-bottom: 1rem; }
       #productsList .productsListContent .sort select {
         padding: 0.5rem; }
-      #productsList .productsListContent .sort .views .reactIcon:nth-child(1) {
-        margin-right: 0.5rem; }
-      #productsList .productsListContent .sort .views .reactIcon {
-        font-size: 2.8rem;
-        cursor: pointer;
-        border: 0.1rem solid black;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        overflow: hidden; }
-      #productsList .productsListContent .sort .views .reactIcon.active {
-        background-color: black;
-        color: white;
-        border: 0.1rem solid white; }
+      #productsList .productsListContent .sort .views {
+        display: flex;
+        align-items: center; }
+        #productsList .productsListContent .sort .views .productsNum {
+          margin-left: 1rem;
+          font-size: 1.5rem; }
+        #productsList .productsListContent .sort .views .reactIcon:nth-child(1) {
+          margin-right: 0.5rem; }
+        #productsList .productsListContent .sort .views .reactIcon {
+          font-size: 2.8rem;
+          cursor: pointer;
+          border: 0.1rem solid black;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+          overflow: hidden; }
+        #productsList .productsListContent .sort .views .reactIcon.active {
+          background-color: black;
+          color: white;
+          border: 0.1rem solid white; }
     #productsList .productsListContent .listView {
       display: flex;
       flex-direction: column; }
@@ -738,4 +844,4 @@ body {
               font-weight: bold;
               color: white;
               font-size: 1.4rem;
-              padding: 1rem 6.5rem; }
+              padding: 1rem 5rem; }

@@ -1,9 +1,18 @@
 export const filter_reducer = (state, action) => {
   if (action.type === "LOAD_PRODUCTS") {
+    let maxPrice = action.payload.map((item) => {
+      return item.price;
+    });
+    maxPrice = Math.max(...maxPrice);
     return {
       ...state,
       unfiltered_products: [...action.payload],
       filtered_products: [...action.payload],
+      filters: {
+        ...state.filters,
+        max_price: maxPrice,
+        price: maxPrice,
+      },
     };
   }
   if (action.type === "SET_GRIDVIEW") {
@@ -18,7 +27,7 @@ export const filter_reducer = (state, action) => {
       gridView: false,
     };
   }
-  if (action.type === "UPDATE_PRODUCTS") {
+  if (action.type === "UPDATE_SORT") {
     return {
       ...state,
       sort: action.payload,
@@ -58,6 +67,35 @@ export const filter_reducer = (state, action) => {
         filtered_products: temporaryProducts,
       };
     }
+  }
+  if (action.type === "UPDATE_FILTER") {
+    const { name, value } = action.payload;
+    return {
+      ...state,
+      filters: {
+        ...state.filters,
+        [name]: value,
+      },
+    };
+  }
+  if (action.type === "FILTER_PRODUCTS") {
+    return {
+      ...state,
+    };
+  }
+  if (action.type === "CLEAR_FILTER") {
+    return {
+      ...state,
+      filters: {
+        ...state.filters,
+        text: "",
+        category: "all",
+        company: "all",
+        color: "all",
+        price: state.filters.max_price,
+        shipping: false,
+      },
+    };
   }
   throw new Error(`Such action ${action.type} was not handled in reducer`);
 };

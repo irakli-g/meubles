@@ -27,6 +27,7 @@ export const Products = () => {
             setList={setList}
             sortProducts={sortProducts}
             sort={sort}
+            products={products}
           />
           <ProductsList {...products} gridView={gridView} />
         </div>
