@@ -14,8 +14,8 @@ import { Sidebar } from "./components/Sidebar";
 function App() {
   return (
     <>
-      <Navbar />
       <Sidebar />
+      <Navbar />
       <main>
         <Routes>
           <Route path="/" exact element={<Home />} />

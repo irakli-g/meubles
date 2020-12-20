@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { AiOutlineCheck } from "react-icons/ai";
+import { useCartContext } from "../context/cart_context";
+import { Link } from "react-router-dom";
 
-export const AddToCart = ({ colors = [], stock }) => {
+export const AddToCart = ({ product }) => {
+  const { colors, id, stock } = product;
+  const { addToCart } = useCartContext();
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState(colors[0]);
 
@@ -68,7 +72,16 @@ export const AddToCart = ({ colors = [], stock }) => {
           <FaPlus className="reactIcon plus" />
         </button>
       </div>
-      <button className="btn addToCart">Add To Cart</button>
+      <Link to="/cart">
+        <button
+          className="btn addToCart"
+          onClick={() => {
+            addToCart(id, quantity, color, product);
+          }}
+        >
+          Add To Cart
+        </button>
+      </Link>
     </div>
   );
 };

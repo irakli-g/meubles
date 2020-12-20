@@ -31,7 +31,6 @@ export const SingleProduct = () => {
   }
 
   const {
-    colors,
     company,
     description,
     name,
@@ -69,7 +68,7 @@ export const SingleProduct = () => {
               {sku}
             </p>
           </div>
-          <AddToCart stock={stock} colors={colors} />
+          {stock > 0 && <AddToCart product={product} />}
         </div>
       </section>
     </>
