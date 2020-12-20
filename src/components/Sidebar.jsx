@@ -3,8 +3,8 @@ import { links } from "../utils/links";
 import { AiFillCloseSquare } from "react-icons/ai";
 import { CartButtons } from "./CartButtons";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.svg";
 import { useProductsContext } from "../context/products_context";
+import logo from "../assets/meubles.png";
 
 export const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
@@ -13,7 +13,7 @@ export const Sidebar = () => {
     <div className={!isSidebarOpen ? "sidebarPanel" : "sidebarPanel show"}>
       <div className="sidebarHeader">
         <figure className="sidebarLogo">
-          <img src={logo} alt="comfy sloth logo" />
+          <img src={logo} alt="meubles logo" />
         </figure>
         <AiFillCloseSquare className="reactIcon close" onClick={closeSidebar} />
       </div>

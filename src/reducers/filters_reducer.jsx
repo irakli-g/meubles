@@ -103,7 +103,7 @@ export const filter_reducer = (state, action) => {
     }
     if (price) {
       tempProducts = tempProducts.filter((item) => {
-        return Number(item.price) <= Number(price);
+        return Number(item.price) < Number(price);
       });
     }
     if (shipping) {

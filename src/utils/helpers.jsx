@@ -1,5 +1,6 @@
 export const products_url = "https://course-api.com/react-store-products";
 export const single_product_url = `https://course-api.com/react-store-single-product?id=`;
+export const countries_url = "https://restcountries.eu/rest/v2/all";
 
 export const getUniqueValues = (arr, name) => {
   let data = arr.map((item) => {

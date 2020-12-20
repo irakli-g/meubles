@@ -10,6 +10,7 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Error } from "./pages/Error";
 import { Sidebar } from "./components/Sidebar";
+import { Checkout } from "./pages/Checkout";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/products" exact element={<Products />} />
           <Route path="/products/:id" exact element={<SingleProduct />} />
           <Route path="/cart" exact element={<Cart />} />
+          <Route path="/checkout" exact element={<Checkout />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </main>

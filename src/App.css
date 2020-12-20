@@ -17,6 +17,11 @@ body {
   justify-content: space-around;
   box-shadow: 0.1rem 0.1rem 0.8rem darkgray;
   position: relative; }
+  #navigation .navigation-logo {
+    width: 10rem;
+    padding: 1rem; }
+    #navigation .navigation-logo img {
+      width: 100%; }
   #navigation .navigation-links {
     list-style: none;
     display: flex;
@@ -89,11 +94,18 @@ body {
   transition: 0.2s all;
   display: flex;
   flex-direction: column;
-  z-index: 100; }
+  z-index: 100;
+  height: 100%;
+  width: 100%; }
   .sidebarPanel .sidebarHeader {
     display: flex;
     align-items: center;
     justify-content: space-around; }
+    .sidebarPanel .sidebarHeader .sidebarLogo {
+      width: 15rem;
+      padding: 1rem; }
+      .sidebarPanel .sidebarHeader .sidebarLogo img {
+        width: 100%; }
     .sidebarPanel .sidebarHeader .reactIcon {
       color: red;
       font-size: 2.5rem;
@@ -230,7 +242,8 @@ body {
   margin: 0 15rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-items: center; }
+  justify-items: center;
+  height: 100vh; }
   #showcase .showcaseBoxOne .showcaseHeading {
     font-size: 4rem;
     margin-bottom: 2rem;
@@ -988,3 +1001,104 @@ body {
       margin: 1rem 0; }
       #cartTotals .carTotalsInfo h5 span {
         margin-left: 3rem; }
+
+#checkout {
+  position: relative; }
+  #checkout #popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(0.5);
+    visibility: hidden;
+    opacity: 0; }
+  #checkout #popup.show {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1); }
+  #checkout form {
+    margin: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    #checkout form fieldset {
+      padding: 1rem;
+      border: 0;
+      width: 40rem; }
+      #checkout form fieldset legend {
+        font-size: 1.5rem;
+        font-weight: bold; }
+      #checkout form fieldset .form-control {
+        display: flex;
+        flex-direction: column;
+        position: relative; }
+        #checkout form fieldset .form-control select {
+          padding: 0.6rem;
+          margin: 1rem 0rem; }
+        #checkout form fieldset .form-control label {
+          position: absolute;
+          left: 0;
+          top: 0;
+          transform: translate(-7rem, 1.2rem);
+          font-size: 1.4rem;
+          transition: 0.4s all;
+          visibility: visible;
+          opacity: 1; }
+        #checkout form fieldset .form-control input {
+          padding: 0.6rem;
+          margin: 1rem 0rem;
+          border: 0;
+          outline: 0;
+          border-bottom: 0.2rem solid #ab7b60; }
+        #checkout form fieldset .form-control input:invalid {
+          border-bottom: 0.2rem solid red; }
+        #checkout form fieldset .form-control input:placeholder-shown ~ label {
+          visibility: hidden;
+          opacity: 0;
+          transform: translate(0.5rem, 1.2rem); }
+  #checkout .orderDetails {
+    width: 50%;
+    border: 0.1rem solid black;
+    padding: 1rem;
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    #checkout .orderDetails .orderInfo {
+      width: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column; }
+      #checkout .orderDetails .orderInfo h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem; }
+      #checkout .orderDetails .orderInfo .info {
+        font-size: 2rem;
+        margin-bottom: 2rem; }
+        #checkout .orderDetails .orderInfo .info h5 {
+          display: flex;
+          align-items: center;
+          justify-content: space-between; }
+          #checkout .orderDetails .orderInfo .info h5 span {
+            margin-left: 4rem; }
+    #checkout .orderDetails .btn {
+      background-color: #ab7b60;
+      padding: 1rem 3rem;
+      border: 0;
+      outline: 0;
+      box-shadow: 0.1rem 0.1rem 1rem darkgray;
+      cursor: pointer;
+      transition: 0.3s opacity;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: white;
+      font-size: 1.5rem; }
+      #checkout .orderDetails .btn:hover {
+        opacity: 0.8; }

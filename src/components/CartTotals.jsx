@@ -32,6 +32,11 @@ export const CartTotals = () => {
             $ {((total + shipping) / 100).toFixed(2)}
           </span>
         </h5>
+        <Link to="/checkout">
+          <button className="btn checkout" style={{ marginTop: "1rem" }}>
+            Checkout
+          </button>
+        </Link>
       </div>
     </section>
   );

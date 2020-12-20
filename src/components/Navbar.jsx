@@ -1,10 +1,10 @@
 import React from "react";
 import { CartButtons } from "./CartButtons";
 import { links } from "../utils/links";
-import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useProductsContext } from "../context/products_context";
+import logo from "../assets/meubles.png";
 
 export const Navbar = () => {
   const { openSidebar } = useProductsContext();
@@ -13,7 +13,7 @@ export const Navbar = () => {
       <nav id="navigation">
         <figure className="navigation-logo">
           <Link to="/">
-            <img src={logo} alt="comfy sloth logo" />
+            <img src={logo} alt="meubles logo" />
           </Link>
         </figure>
         <ul className="navigation-links">
