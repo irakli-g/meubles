@@ -11,10 +11,12 @@ import { Footer } from "./components/Footer";
 import { Error } from "./pages/Error";
 import { Sidebar } from "./components/Sidebar";
 import { Checkout } from "./pages/Checkout";
+import { Message } from "./components/Message";
 
 function App() {
   return (
     <>
+      <Message />
       <Sidebar />
       <Navbar />
       <main>

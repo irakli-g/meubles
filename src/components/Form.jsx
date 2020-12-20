@@ -2,26 +2,23 @@ import React, { useEffect, useState } from "react";
 import { countries_url } from "../utils/helpers";
 import { PageHero } from "./PageHero";
 import { useCartContext } from "../context/cart_context";
-
-const status = {
-  IDLE: "IDLE",
-  SUBMITTING: "SUBMITTING",
-  COMPLETED: "COMPLETED",
-};
+import { useFormContext } from "../context/form_context";
 
 export const Form = () => {
   const [err, setErr] = useState(null);
   const [countries, setCountries] = useState([]);
-  const [formState, setFormState] = useState(status.IDLE);
   const { total_amount: amount, shipping_fee: shipping } = useCartContext();
-  const [values, setValues] = useState({
-    name: "",
-    email: "",
-    country: "",
-    city: "",
-    street: "",
-    zip: "",
-  });
+  const {
+    name,
+    email,
+    country,
+    city,
+    street,
+    zip,
+    startSubmitting,
+    status,
+    submitForm,
+  } = useFormContext();
 
   const fetchCountries = async (url) => {
     try {
@@ -34,32 +31,6 @@ export const Form = () => {
     } catch (e) {
       setErr(e);
     }
-  };
-
-  useEffect(() => {
-    if (
-      values.name !== "" &&
-      values.email !== "" &&
-      values.country !== "" &&
-      values.street !== "" &&
-      values.city !== "" &&
-      values.zip !== ""
-    ) {
-      setFormState(status.COMPLETED);
-    }
-  }, [values]);
-
-  const startSubmitting = (e) => {
-    setFormState(status.SUBMITTING);
-    let property = e.target.name;
-    let value = e.target.value;
-
-    setValues((oldValues) => {
-      return {
-        ...oldValues,
-        [property]: value,
-      };
-    });
   };
 
   useEffect(() => {
@@ -78,8 +49,8 @@ export const Form = () => {
               placeholder="Name"
               id="name"
               name="name"
-              pattern="^[a-zA-Z]{2,12}$"
-              value={values.name}
+              pattern="^[a-zA-Z\s]{2,15}$"
+              value={name}
               onChange={(e) => startSubmitting(e)}
             />
             <label htmlFor="name">Name</label>
@@ -91,7 +62,7 @@ export const Form = () => {
               id="email"
               name="email"
               pattern="^[a-zA-Z\.-_0-9]+@[a-zA-Z0-9]+\.[a-z{2,6}]+(\.[a-zA-Z{2,6}]+)?$"
-              value={values.email}
+              value={email}
               onChange={(e) => startSubmitting(e)}
             />
             <label htmlFor="email">Email</label>
@@ -103,7 +74,7 @@ export const Form = () => {
             <select
               name="country"
               id="country"
-              value={values.country}
+              value={country}
               onChange={(e) => startSubmitting(e)}
             >
               {!err &&
@@ -122,8 +93,8 @@ export const Form = () => {
               placeholder="City"
               id="city"
               name="city"
-              pattern="^[a-zA-Z]{2,}$"
-              value={values.city}
+              pattern="^[a-zA-Z\s]{2,}$"
+              value={city}
               onChange={(e) => startSubmitting(e)}
             />
             <label htmlFor="city">City</label>
@@ -134,8 +105,8 @@ export const Form = () => {
               placeholder="Street"
               id="street"
               name="street"
-              pattern="^[a-zA-Z0-9\.-]{3,}$"
-              value={values.street}
+              pattern="^[a-zA-Z0-9\.-\s]{3,}$"
+              value={street}
               onChange={(e) => startSubmitting(e)}
             />
             <label htmlFor="street">Street</label>
@@ -146,7 +117,7 @@ export const Form = () => {
               placeholder="Zip Code"
               id="zip"
               name="zip"
-              value={values.zip}
+              value={zip}
               onChange={(e) => startSubmitting(e)}
             />
             <label htmlFor="zip">Zip Code</label>
@@ -159,11 +130,11 @@ export const Form = () => {
           <div className="info">
             <h5>
               Subtotal:
-              <span className="subtotal">$ {amount / 100}</span>
+              <span className="subtotal">$ {(amount / 100).toFixed(2)}</span>
             </h5>
             <h5>
               Shipping:
-              <span className="shipping">$ {shipping / 100}</span>
+              <span className="shipping">$ {(shipping / 100).toFixed(2)}</span>
             </h5>
             <hr />
             <h5>
@@ -174,9 +145,8 @@ export const Form = () => {
         </div>
         <button
           className="btn"
-          disabled={
-            formState === status.IDLE || formState === status.SUBMITTING
-          }
+          disabled={status === "IDLE"}
+          onClick={submitForm}
         >
           Place Order
         </button>

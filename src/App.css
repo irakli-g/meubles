@@ -11,6 +11,9 @@ html {
 body {
   font-family: "Roboto" "sans-serif"; }
 
+#root {
+  position: relative; }
+
 #navigation {
   display: flex;
   align-items: center;
@@ -1004,7 +1007,11 @@ body {
 
 #checkout {
   position: relative; }
-  #checkout #popup {
+  #checkout .popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -1013,13 +1020,48 @@ body {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    transform: scale(0.5);
+    transform: scale(1); }
+    #checkout .popup .popup-content {
+      background-color: white;
+      box-shadow: 0.1rem 0.1rem 1rem darkgray;
+      padding: 3rem 6rem; }
+      #checkout .popup .popup-content h2 {
+        font-family: "Merriweather";
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-align: center; }
+      #checkout .popup .popup-content h3 {
+        margin-bottom: 1rem;
+        text-align: center;
+        font-size: 2rem; }
+      #checkout .popup .popup-content h4 {
+        font-size: 2rem;
+        margin-top: 6rem; }
+      #checkout .popup .popup-content .shipping {
+        margin: 2rem;
+        font-size: 1.5rem; }
+        #checkout .popup .popup-content .shipping h5 {
+          font-size: 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 1rem; }
+      #checkout .popup .popup-content .btn {
+        background-color: #ab7b60;
+        padding: 1rem 3rem;
+        border: 0;
+        outline: 0;
+        box-shadow: 0.1rem 0.1rem 1rem darkgray;
+        cursor: pointer;
+        transition: 0.3s opacity;
+        margin: 2rem auto;
+        font-weight: bold;
+        color: white; }
+        #checkout .popup .popup-content .btn:hover {
+          opacity: 0.8; }
+  #checkout .popup.hide {
     visibility: hidden;
     opacity: 0; }
-  #checkout #popup.show {
-    visibility: visible;
-    opacity: 1;
-    transform: scale(1); }
   #checkout form {
     margin: 4rem 0;
     display: flex;
@@ -1057,15 +1099,17 @@ body {
           border-bottom: 0.2rem solid #ab7b60; }
         #checkout form fieldset .form-control input:invalid {
           border-bottom: 0.2rem solid red; }
+        #checkout form fieldset .form-control input:valid {
+          border-bottom: 0.2rem solid green; }
         #checkout form fieldset .form-control input:placeholder-shown ~ label {
           visibility: hidden;
           opacity: 0;
           transform: translate(0.5rem, 1.2rem); }
   #checkout .orderDetails {
-    width: 50%;
+    width: 40%;
     border: 0.1rem solid black;
     padding: 1rem;
-    margin: 5rem auto;
+    margin: 5rem auto 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1102,3 +1146,44 @@ body {
       font-size: 1.5rem; }
       #checkout .orderDetails .btn:hover {
         opacity: 0.8; }
+
+.message {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .message .message-container {
+    background-color: white;
+    box-shadow: 0.1rem 0.1rem 1rem darkgray;
+    padding: 3rem;
+    width: 40rem; }
+    .message .message-container p {
+      font-size: 1.5rem;
+      line-height: 2rem; }
+      .message .message-container p a {
+        margin: 0 0.2rem; }
+    .message .message-container .btn {
+      background-color: #ab7b60;
+      padding: 1rem 3rem;
+      border: 0;
+      outline: 0;
+      box-shadow: 0.1rem 0.1rem 1rem darkgray;
+      cursor: pointer;
+      transition: 0.3s opacity;
+      font-weight: bold;
+      color: white;
+      margin-top: 2rem; }
+      .message .message-container .btn:hover {
+        opacity: 0.8; }
+
+.message.hide {
+  visibility: hidden;
+  opacity: 0; }

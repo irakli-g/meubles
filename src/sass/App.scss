@@ -12,6 +12,9 @@ html {
 body {
   font-family: "Roboto" "sans-serif";
 }
+#root {
+  position: relative;
+}
 
 #navigation {
   display: flex;
@@ -1126,10 +1129,13 @@ body {
     }
   }
 }
-
 #checkout {
   position: relative;
-  & #popup {
+  & .popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -1138,14 +1144,48 @@ body {
     height: 100%;
     width: 100%;
     background-color: rgba(black, 0.5);
-    transform: scale(0.5);
+    transform: scale(1);
+    & .popup-content {
+      background-color: white;
+      box-shadow: 0.1rem 0.1rem 1rem darkgray;
+      padding: 3rem 6rem;
+      & h2 {
+        font-family: "Merriweather";
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      & h3 {
+        margin-bottom: 1rem;
+        text-align: center;
+        font-size: 2rem;
+      }
+      & h4 {
+        font-size: 2rem;
+        margin-top: 6rem;
+      }
+      & .shipping {
+        margin: 2rem;
+        font-size: 1.5rem;
+        & h5 {
+          font-size: 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+        }
+      }
+      & .btn {
+        @include btn(1rem 3rem);
+        margin: 2rem auto;
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
+  & .popup.hide {
     visibility: hidden;
     opacity: 0;
-  }
-  & #popup.show {
-    visibility: visible;
-    opacity: 1;
-    transform: scale(1);
   }
   & form {
     margin: 4rem 0;
@@ -1189,6 +1229,9 @@ body {
         & input:invalid {
           border-bottom: 0.2rem solid red;
         }
+        & input:valid {
+          border-bottom: 0.2rem solid green;
+        }
         & input:placeholder-shown ~ label {
           visibility: hidden;
           opacity: 0;
@@ -1198,10 +1241,10 @@ body {
     }
   }
   & .orderDetails {
-    width: 50%;
+    width: 40%;
     border: 0.1rem solid black;
     padding: 1rem;
-    margin: 5rem auto;
+    margin: 5rem auto 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1238,4 +1281,41 @@ body {
       font-size: 1.5rem;
     }
   }
+}
+.message {
+  background-color: rgba(black, 0.6);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  & .message-container {
+    background-color: white;
+    box-shadow: 0.1rem 0.1rem 1rem darkgray;
+    padding: 3rem;
+    width: 40rem;
+    & p {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      & a {
+        margin: 0 0.2rem;
+      }
+    }
+    & .btn {
+      @include btn(1rem 3rem);
+      font-weight: bold;
+      color: white;
+      margin-top: 2rem;
+    }
+  }
+}
+.message.hide {
+  visibility: hidden;
+  opacity: 0;
 }
