@@ -9,9 +9,9 @@ export const CartButtons = () => {
   const { total_items } = useCartContext();
   return (
     <div className="cartButtons">
-      <span className="cartItems">{total_items}</span>
       <span className="cartText">Cart</span>
       <Link to="/cart" className="cartLink">
+        <span className="cartItems">{total_items}</span>
         <HiShoppingCart className="reactIcon cart" onClick={closeSidebar} />
       </Link>
     </div>
