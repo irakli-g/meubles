@@ -24,9 +24,9 @@ export const ListView = (props) => {
                 <span className="price">$ {price / 100}</span>
               </div>
               <p className="description">{description.substring(0, 200)}...</p>
-              <button className="buttonView">
-                <Link to={`/products/${id}`}>Details</Link>
-              </button>
+              <Link to={`/products/${id}`}>
+                <button className="btn">Details</button>
+              </Link>
             </div>
           </div>
         );

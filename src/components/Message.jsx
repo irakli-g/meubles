@@ -25,7 +25,14 @@ export const Message = () => {
             irakli-g.dev
           </a>
           solely for presentational purposes and does not offer any goods or
-          services.
+          services. 👉
+          <a
+            href="https://github.com/irakli-g/meubles"
+            target="_blank"
+            rel="noreferrer"
+          >
+            source code
+          </a>
         </p>
         <button className="btn" onClick={() => closeMessage()}>
           Close

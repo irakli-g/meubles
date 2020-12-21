@@ -185,11 +185,28 @@ body {
   column-gap: 3rem;
   padding: 10rem 0;
   margin: 0 20rem; }
+  @media (max-width: 1100px) {
+    .aboutGrid {
+      margin: 0 10rem; } }
+  @media (max-width: 900px) {
+    .aboutGrid {
+      margin: 0 5rem; } }
+  @media (max-width: 800px) {
+    .aboutGrid {
+      display: flex;
+      flex-direction: column-reverse; } }
   .aboutGrid .aboutImage {
     width: 100%; }
+    @media (max-width: 800px) {
+      .aboutGrid .aboutImage {
+        width: 80%;
+        align-self: center; } }
     .aboutGrid .aboutImage img {
       width: 100%;
       display: block; }
+  @media (max-width: 800px) {
+    .aboutGrid .aboutContent {
+      margin-bottom: 4rem; } }
   .aboutGrid .aboutContent .aboutContentHeading {
     font-size: 4rem;
     font-family: "Merriweather"; }
@@ -738,11 +755,39 @@ body {
   display: flex;
   justify-content: center;
   margin: 5rem 15rem; }
+  @media (max-width: 900px) {
+    #productsList {
+      margin: 5rem 10rem; } }
+  @media (max-width: 800px) {
+    #productsList {
+      margin: 5rem 5rem; } }
+  @media (max-width: 700px) {
+    #productsList {
+      margin: 5rem 2rem; } }
+  @media (max-width: 600px) {
+    #productsList {
+      flex-direction: column; } }
   #productsList .filters {
     margin-right: 4rem; }
+    @media (max-width: 700px) {
+      #productsList .filters {
+        margin-right: 2rem;
+        width: 20rem; } }
+    @media (max-width: 600px) {
+      #productsList .filters {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2rem; } }
     #productsList .filters form {
       display: flex;
       flex-direction: column; }
+      @media (max-width: 700px) {
+        #productsList .filters form {
+          width: 100%; } }
+      @media (max-width: 600px) {
+        #productsList .filters form {
+          justify-content: center;
+          align-items: center; } }
       #productsList .filters form h4 {
         text-align: center;
         margin-bottom: 1rem;
@@ -761,6 +806,20 @@ body {
       #productsList .filters form .form-control:nth-child(2) {
         display: flex;
         flex-direction: column; }
+        @media (max-width: 600px) {
+          #productsList .filters form .form-control:nth-child(2) {
+            flex-direction: row;
+            width: 100%;
+            align-items: center;
+            justify-content: center; }
+            #productsList .filters form .form-control:nth-child(2) .btn {
+              margin: 0 1rem; } }
+        @media (max-width: 500px) {
+          #productsList .filters form .form-control:nth-child(2) {
+            display: none; } }
+        @media (max-width: 600px) {
+          #productsList .filters form .form-control:nth-child(2) h4 {
+            display: none; } }
         #productsList .filters form .form-control:nth-child(2) .btn {
           border: 0;
           background: 0;
@@ -777,6 +836,13 @@ body {
           font-weight: bold; }
       #productsList .filters form .form-control:nth-child(3) {
         width: 100%; }
+        @media (max-width: 600px) {
+          #productsList .filters form .form-control:nth-child(3) {
+            width: 50%;
+            margin: 0 auto; } }
+        @media (max-width: 500px) {
+          #productsList .filters form .form-control:nth-child(3) {
+            display: none; } }
         #productsList .filters form .form-control:nth-child(3) select {
           margin-top: 2rem;
           padding: 0.8rem 0;
@@ -822,6 +888,9 @@ body {
         justify-content: space-between; }
         #productsList .filters form .form-control:nth-child(6) label {
           font-size: 1.5rem; }
+          @media (max-width: 600px) {
+            #productsList .filters form .form-control:nth-child(6) label {
+              margin-right: 1rem; } }
         #productsList .filters form .form-control:nth-child(6) input {
           height: 1.5rem;
           width: 1.5rem;
@@ -847,6 +916,23 @@ body {
       grid-template-columns: repeat(3, 1fr);
       column-gap: 2rem;
       row-gap: 5rem; }
+      @media (max-width: 1400px) {
+        #productsList .productsListContent .gridView {
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: 2rem;
+          row-gap: 5rem; } }
+      @media (max-width: 1100px) {
+        #productsList .productsListContent .gridView {
+          grid-template-columns: 1fr; } }
+      @media (max-width: 600px) {
+        #productsList .productsListContent .gridView {
+          padding: 0 8rem; } }
+      @media (max-width: 500px) {
+        #productsList .productsListContent .gridView {
+          padding: 0 5rem; } }
+      @media (max-width: 400px) {
+        #productsList .productsListContent .gridView {
+          padding: 0 1rem; } }
       #productsList .productsListContent .gridView .productBox {
         display: flex;
         flex-direction: column; }
@@ -901,6 +987,9 @@ body {
         #productsList .productsListContent .sort .views .productsNum {
           margin-left: 1rem;
           font-size: 1.5rem; }
+          @media (max-width: 400px) {
+            #productsList .productsListContent .sort .views .productsNum {
+              display: none; } }
         #productsList .productsListContent .sort .views .reactIcon:nth-child(1) {
           margin-right: 0.5rem; }
         #productsList .productsListContent .sort .views .reactIcon {
@@ -922,6 +1011,17 @@ body {
         grid-template-columns: 30% 70%;
         margin-bottom: 3rem;
         box-shadow: 0.1rem 0.1rem 0.8rem darkgray; }
+        @media (max-width: 1600px) {
+          #productsList .productsListContent .listView .productBox {
+            grid-template-columns: 40% 60%; } }
+        @media (max-width: 1400px) {
+          #productsList .productsListContent .listView .productBox {
+            grid-template-columns: 50% 50%; } }
+        @media (max-width: 1200px) {
+          #productsList .productsListContent .listView .productBox {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            row-gap: 2rem; } }
         #productsList .productsListContent .listView .productBox img {
           width: 100%;
           height: 30rem;
@@ -945,24 +1045,18 @@ body {
             font-size: 1.5rem;
             line-height: 2.5rem;
             color: #888888; }
-          #productsList .productsListContent .listView .productBox .productBoxInfo .buttonView {
+          #productsList .productsListContent .listView .productBox .productBoxInfo a .btn {
             background-color: #ab7b60;
-            padding: 1rem 0rem;
+            padding: 1rem 3rem;
             border: 0;
             outline: 0;
             box-shadow: 0.1rem 0.1rem 1rem darkgray;
             cursor: pointer;
             transition: 0.3s opacity;
-            width: 25%;
-            align-self: flex-start; }
-            #productsList .productsListContent .listView .productBox .productBoxInfo .buttonView:hover {
+            color: white;
+            font-weight: bold; }
+            #productsList .productsListContent .listView .productBox .productBoxInfo a .btn:hover {
               opacity: 0.8; }
-            #productsList .productsListContent .listView .productBox .productBoxInfo .buttonView a {
-              text-decoration: 0;
-              font-weight: bold;
-              color: white;
-              font-size: 1.4rem;
-              padding: 1rem 5rem; }
 
 #cart {
   display: flex;
