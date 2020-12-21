@@ -241,12 +241,17 @@ body {
       padding: 1.5rem 4rem; }
 
 #showcase {
-  padding: 10rem 0;
-  margin: 0 15rem;
+  margin: 10rem 15rem 8rem 15rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  height: 100vh; }
+  justify-items: center; }
+  @media (max-width: 1400px) {
+    #showcase {
+      column-gap: 10rem; } }
+  @media (max-width: 1200px) {
+    #showcase {
+      display: flex;
+      margin: 10rem 5rem 8rem 5rem; } }
   #showcase .showcaseBoxOne .showcaseHeading {
     font-size: 4rem;
     margin-bottom: 2rem;
@@ -256,6 +261,9 @@ body {
     line-height: 3rem;
     width: 80%;
     color: #888888; }
+    @media (max-width: 850px) {
+      #showcase .showcaseBoxOne .showcaseText {
+        width: 100%; } }
   #showcase .showcaseBoxOne .btn {
     background-color: #ab7b60;
     padding: 2rem 0;
@@ -276,15 +284,26 @@ body {
       padding: 2rem 5rem; }
   #showcase .showcaseBoxTwo {
     position: relative; }
+    @media (max-width: 900px) {
+      #showcase .showcaseBoxTwo {
+        display: none; } }
     #showcase .showcaseBoxTwo img:nth-child(1) {
       width: 25rem;
       position: absolute;
       bottom: 0;
       left: -10rem; }
+      @media (max-width: 1400px) {
+        #showcase .showcaseBoxTwo img:nth-child(1) {
+          width: 20rem;
+          bottom: 13.5rem; } }
     #showcase .showcaseBoxTwo img:nth-child(2) {
       width: 40rem;
       height: 100%;
       box-shadow: 0.1rem 0.1rem 0.8rem darkgray; }
+      @media (max-width: 1400px) {
+        #showcase .showcaseBoxTwo img:nth-child(2) {
+          width: 35rem;
+          height: 80%; } }
     #showcase .showcaseBoxTwo .background {
       position: absolute;
       background-color: #e4d1c6;
@@ -295,6 +314,11 @@ body {
       left: -10rem;
       z-index: -1;
       box-shadow: 0.1rem 0.1rem 0.8rem darkgray; }
+      @media (max-width: 1400px) {
+        #showcase .showcaseBoxTwo .background {
+          width: 35rem;
+          height: 60%;
+          bottom: 13.5rem; } }
 
 #services {
   background-color: #e4d1c6;
@@ -304,12 +328,26 @@ body {
   align-items: center;
   padding: 0 20rem;
   position: relative; }
+  @media (max-width: 700px) {
+    #services {
+      padding: 0 10rem; } }
+  @media (max-width: 450px) {
+    #services {
+      padding: 0 5rem; } }
   #services .servicesBoxOne {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
     align-items: center;
     margin-top: 6rem; }
+    @media (max-width: 1000px) {
+      #services .servicesBoxOne {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 5rem; } }
+    @media (max-width: 700px) {
+      #services .servicesBoxOne {
+        text-align: center; } }
     #services .servicesBoxOne .boxOneHeading {
       font-size: 3rem;
       font-family: "Merriweather"; }
@@ -321,6 +359,11 @@ body {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
     transform: translateY(8rem); }
+    @media (max-width: 1200px) {
+      #services .servicesBoxTwo {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 2rem; } }
     #services .servicesBoxTwo .boxTwoCard {
       background-color: #be9d8a;
       text-align: center;
@@ -356,6 +399,26 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 4rem; }
+  @media (max-width: 1200px) {
+    #contact {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 2rem; } }
+  @media (max-width: 850px) {
+    #contact {
+      margin: 0 5rem; } }
+  @media (max-width: 600px) {
+    #contact {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 30rem 2rem 25rem 2rem; } }
+  @media (max-width: 1200px) {
+    #contact .contactBoxOne {
+      text-align: center; } }
+  @media (max-width: 600px) {
+    #contact .contactBoxOne {
+      width: 100%; } }
   #contact .contactBoxOne .boxOneHeading {
     font-size: 3rem;
     margin-bottom: 3rem;
@@ -366,17 +429,30 @@ body {
     color: #888888; }
   #contact .contactBoxTwo {
     align-self: center; }
+    @media (max-width: 600px) {
+      #contact .contactBoxTwo {
+        margin-top: 5rem;
+        width: 80%; } }
     #contact .contactBoxTwo form {
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center; }
+      @media (max-width: 600px) {
+        #contact .contactBoxTwo form {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(2, 1fr);
+          row-gap: 3rem; } }
       #contact .contactBoxTwo form input {
         outline: 0;
         border: 0;
         box-shadow: 0.1rem 0.1rem 0.3rem black;
         padding: 1.5rem 1.5rem;
         width: 35rem; }
+        @media (max-width: 600px) {
+          #contact .contactBoxTwo form input {
+            width: 100%; } }
       #contact .contactBoxTwo form .btn {
         background-color: #ab7b60;
         padding: 1.6rem 4rem;
@@ -412,6 +488,11 @@ body {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 3rem;
     margin: 3rem 0; }
+    @media (max-width: 850px) {
+      #featuredProducts .featuredProductsBox {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 4rem; } }
     #featuredProducts .featuredProductsBox .featuredProduct {
       display: flex;
       flex-direction: column;
@@ -423,6 +504,30 @@ body {
         overflow: hidden;
         border-radius: 0.5rem;
         position: relative; }
+        @media (max-width: 1400px) {
+          #featuredProducts .featuredProductsBox .featuredProduct .featuredProductImage {
+            width: 35rem;
+            height: 22rem; } }
+        @media (max-width: 1200px) {
+          #featuredProducts .featuredProductsBox .featuredProduct .featuredProductImage {
+            width: 30rem;
+            height: 20rem; } }
+        @media (max-width: 1000px) {
+          #featuredProducts .featuredProductsBox .featuredProduct .featuredProductImage {
+            width: 25rem;
+            height: 18rem; } }
+        @media (max-width: 850px) {
+          #featuredProducts .featuredProductsBox .featuredProduct .featuredProductImage {
+            width: 42rem;
+            height: 28rem; } }
+        @media (max-width: 600px) {
+          #featuredProducts .featuredProductsBox .featuredProduct .featuredProductImage {
+            width: 30rem;
+            height: 20rem; } }
+        @media (max-width: 400px) {
+          #featuredProducts .featuredProductsBox .featuredProduct .featuredProductImage {
+            width: 22rem;
+            height: 12rem; } }
         #featuredProducts .featuredProductsBox .featuredProduct .featuredProductImage::before {
           content: "";
           position: absolute;
@@ -474,22 +579,18 @@ body {
           font-size: 1.5rem;
           font-weight: 400;
           color: #ab7b60; }
-  #featuredProducts .btn {
+  #featuredProducts a .btn {
     background-color: #ab7b60;
-    padding: 1.5rem 0rem;
+    padding: 1rem 3rem;
     border: 0;
     outline: 0;
     box-shadow: 0.1rem 0.1rem 1rem darkgray;
     cursor: pointer;
     transition: 0.3s opacity;
-    margin: 4rem 0; }
-    #featuredProducts .btn:hover {
+    color: white;
+    font-weight: bold; }
+    #featuredProducts a .btn:hover {
       opacity: 0.8; }
-    #featuredProducts .btn a {
-      padding: 1.5rem 6rem;
-      text-decoration: 0;
-      color: white;
-      font-weight: bold; }
 
 #loading {
   display: flex;

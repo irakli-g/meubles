@@ -26,9 +26,9 @@ export const FeaturedProducts = () => {
           return <FeaturedProduct key={item.id} {...item} />;
         })}
       </div>
-      <button className="btn">
-        <Link to="/products">All Products</Link>
-      </button>
+      <Link to="/products" className="router-link">
+        <button className="btn">All Products</button>
+      </Link>
     </section>
   );
 };

@@ -280,12 +280,17 @@ body {
 }
 
 #showcase {
-  padding: 10rem 0;
-  margin: 0 15rem;
+  margin: 10rem 15rem 8rem 15rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
-  height: 100vh;
+  @media (max-width: 1400px) {
+    column-gap: 10rem;
+  }
+  @media (max-width: 1200px) {
+    display: flex;
+    margin: 10rem 5rem 8rem 5rem;
+  }
   & .showcaseBoxOne {
     & .showcaseHeading {
       font-size: 4rem;
@@ -297,6 +302,9 @@ body {
       line-height: 3rem;
       width: 80%;
       color: rgb(136, 136, 136);
+      @media (max-width: 850px) {
+        width: 100%;
+      }
     }
     & .btn {
       @include btn(2rem 0);
@@ -313,16 +321,27 @@ body {
   }
   & .showcaseBoxTwo {
     position: relative;
+    @media (max-width: 900px) {
+      display: none;
+    }
     & img:nth-child(1) {
       width: 25rem;
       position: absolute;
       bottom: 0;
       left: -10rem;
+      @media (max-width: 1400px) {
+        width: 20rem;
+        bottom: 13.5rem;
+      }
     }
     & img:nth-child(2) {
       width: 40rem;
       height: 100%;
       box-shadow: 0.1rem 0.1rem 0.8rem darkgray;
+      @media (max-width: 1400px) {
+        width: 35rem;
+        height: 80%;
+      }
     }
     & .background {
       position: absolute;
@@ -334,6 +353,11 @@ body {
       left: -10rem;
       z-index: -1;
       box-shadow: 0.1rem 0.1rem 0.8rem darkgray;
+      @media (max-width: 1400px) {
+        width: 35rem;
+        height: 60%;
+        bottom: 13.5rem;
+      }
     }
   }
 }
@@ -346,12 +370,26 @@ body {
   align-items: center;
   padding: 0 20rem;
   position: relative;
+  @media (max-width: 700px) {
+    padding: 0 10rem;
+  }
+  @media (max-width: 450px) {
+    padding: 0 5rem;
+  }
   & .servicesBoxOne {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
     align-items: center;
     margin-top: 6rem;
+    @media (max-width: 1000px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 5rem;
+    }
+    @media (max-width: 700px) {
+      text-align: center;
+    }
     & .boxOneHeading {
       font-size: 3rem;
       font-family: "Merriweather";
@@ -366,6 +404,11 @@ body {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
     transform: translateY(8rem);
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      row-gap: 2rem;
+    }
     & .boxTwoCard {
       background-color: $tertiaryColor;
       text-align: center;
@@ -409,7 +452,27 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 4rem;
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+  @media (max-width: 850px) {
+    margin: 0 5rem;
+  }
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 30rem 2rem 25rem 2rem;
+  }
   & .contactBoxOne {
+    @media (max-width: 1200px) {
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      width: 100%;
+    }
     & .boxOneHeading {
       font-size: 3rem;
       margin-bottom: 3rem;
@@ -423,17 +486,30 @@ body {
   }
   & .contactBoxTwo {
     align-self: center;
+    @media (max-width: 600px) {
+      margin-top: 5rem;
+      width: 80%;
+    }
     & form {
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      @media (max-width: 600px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 3rem;
+      }
       & input {
         outline: 0;
         border: 0;
         box-shadow: 0.1rem 0.1rem 0.3rem black;
         padding: 1.5rem 1.5rem;
         width: 35rem;
+        @media (max-width: 600px) {
+          width: 100%;
+        }
       }
       & .btn {
         @include btn(1.6rem 4rem);
@@ -465,6 +541,11 @@ body {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 3rem;
     margin: 3rem 0;
+    @media (max-width: 850px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      row-gap: 4rem;
+    }
     & .featuredProduct {
       display: flex;
       flex-direction: column;
@@ -476,6 +557,30 @@ body {
         overflow: hidden;
         border-radius: 0.5rem;
         position: relative;
+        @media (max-width: 1400px) {
+          width: 35rem;
+          height: 22rem;
+        }
+        @media (max-width: 1200px) {
+          width: 30rem;
+          height: 20rem;
+        }
+        @media (max-width: 1000px) {
+          width: 25rem;
+          height: 18rem;
+        }
+        @media (max-width: 850px) {
+          width: 42rem;
+          height: 28rem;
+        }
+        @media (max-width: 600px) {
+          width: 30rem;
+          height: 20rem;
+        }
+        @media (max-width: 400px) {
+          width: 22rem;
+          height: 12rem;
+        }
         &::before {
           content: "";
           position: absolute;
@@ -538,12 +643,9 @@ body {
       }
     }
   }
-  & .btn {
-    @include btn(1.5rem 0rem);
-    margin: 4rem 0;
-    & a {
-      padding: 1.5rem 6rem;
-      text-decoration: 0;
+  & a {
+    & .btn {
+      @include btn(1rem 3rem);
       color: white;
       font-weight: bold;
     }
