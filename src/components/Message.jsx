@@ -20,12 +20,8 @@ export const Message = () => {
     <section className={messageState ? "message hide" : "message"}>
       <div className="message-container">
         <p>
-          This App was created by Irakli Ghachava
-          <a href="https://irakli-g.dev/" target="_blank" rel="noreferrer">
-            irakli-g.dev
-          </a>
-          solely for presentational purposes and does not offer any goods or
-          services. 👉
+          This App was created by Irakli Ghachava solely for presentational
+          purposes and does not offer any goods or services. 👉
           <a
             href="https://github.com/irakli-g/meubles"
             target="_blank"

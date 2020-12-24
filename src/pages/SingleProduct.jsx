@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import { useProductsContext } from "../context/products_context";
 import { single_product_url } from "../utils/helpers";
 import { useParams } from "react-router-dom";
@@ -7,9 +7,9 @@ import { AddToCart } from "../components/AddToCart";
 import { Loading } from "../components/Loading";
 import { Reviews } from "../components/Reviews";
 import { PageHero } from "../components/PageHero";
-import { Error } from "./Error";
+const Error = lazy(() => import("../pages/Error"));
 
-export const SingleProduct = () => {
+const SingleProduct = () => {
   const {
     singleProduct: product,
     isSingleProduct_loading: loading,
@@ -74,3 +74,5 @@ export const SingleProduct = () => {
     </>
   );
 };
+
+export default SingleProduct;

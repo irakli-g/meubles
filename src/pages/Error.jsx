@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ImSad2 } from "react-icons/im";
 
-export const Error = () => {
+const Error = () => {
   return (
     <section id="errorPage">
       <div className="errorHeadingBox">
@@ -17,3 +17,5 @@ export const Error = () => {
     </section>
   );
 };
+
+export default Error;

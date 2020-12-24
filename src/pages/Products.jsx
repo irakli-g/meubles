@@ -5,7 +5,7 @@ import { Sort } from "../components/Sort";
 import { useFilterContext } from "../context/filters_context";
 import { PageHero } from "../components/PageHero";
 
-export const Products = () => {
+const Products = () => {
   const {
     filtered_products: products,
     gridView,
@@ -35,3 +35,5 @@ export const Products = () => {
     </>
   );
 };
+
+export default Products;

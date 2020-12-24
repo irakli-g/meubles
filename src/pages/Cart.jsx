@@ -5,7 +5,7 @@ import { CartTotals } from "../components/CartTotals";
 import { PageHero } from "../components/PageHero";
 import { Link } from "react-router-dom";
 
-export const Cart = () => {
+const Cart = () => {
   const { cart, removeFromCart, updateAmount } = useCartContext();
   if (cart.length < 1) {
     return (
@@ -41,3 +41,5 @@ export const Cart = () => {
     </>
   );
 };
+
+export default Cart;

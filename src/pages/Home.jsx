@@ -4,7 +4,7 @@ import { FeaturedProducts } from "../components/FeaturedProducts";
 import { Services } from "../components/Services";
 import { Contact } from "../components/Contact";
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
       <Showcase />
@@ -14,3 +14,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;

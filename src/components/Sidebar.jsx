@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
 import logo from "../assets/meubles.png";
 
-export const Sidebar = () => {
+const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
 
   return (
@@ -33,3 +33,5 @@ export const Sidebar = () => {
     </div>
   );
 };
+
+export default Sidebar;

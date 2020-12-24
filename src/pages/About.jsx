@@ -2,7 +2,7 @@ import React from "react";
 import { PageHero } from "../components/PageHero";
 import aboutImg from "../assets/hero-bcg.jpeg";
 
-export const About = () => {
+const About = () => {
   return (
     <section id="about">
       <PageHero title={"About"} />
@@ -29,3 +29,5 @@ export const About = () => {
     </section>
   );
 };
+
+export default About;

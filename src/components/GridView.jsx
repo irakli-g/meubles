@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { HiEmojiSad } from "react-icons/hi";
 
-export const GridView = (props) => {
+const GridView = (props) => {
   const { products } = props;
   if (products.length === 0) {
     return (
@@ -31,3 +31,5 @@ export const GridView = (props) => {
     </>
   );
 };
+
+export default GridView;

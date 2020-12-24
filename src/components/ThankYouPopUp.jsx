@@ -3,14 +3,14 @@ import { useFormContext } from "../context/form_context";
 import { order_id } from "../utils/helpers";
 import { useCartContext } from "../context/cart_context";
 
-export const ThankYou = () => {
+const ThankYou = () => {
   const { country, city, street, zip, status, clearForm } = useFormContext();
   const { clearCart } = useCartContext();
 
   const reload = () => {
     setTimeout(() => {
       window.location.reload();
-      window.location.assign("http://localhost:3000/");
+      window.location.assign("https://irakli-g-meubles.netlify.app/products");
     }, 1000);
   };
 
@@ -49,3 +49,5 @@ export const ThankYou = () => {
     </section>
   );
 };
+
+export default ThankYou;
